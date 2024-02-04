@@ -21,7 +21,8 @@ app.use(bodyParser.json());
 // );
 
 app.post("/", (req, res) => {
-  res.send(req.body)
+  updateEntrySheets(req.body);
+  res.send('sucessfull')
 });
 
 // app.post("/contact", (req, res) => {
