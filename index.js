@@ -3,13 +3,15 @@ import { JWT } from "google-auth-library";
 import express from "express";
 import bodyParser from "body-parser";
 import "dotenv/config";
-// import cors from "cors";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT; //|| "3000"
 
 // app.use(express.static("dist"));
 app.use(bodyParser.json());
+
 // app.use(
 //   cors({
 //     origin: [process.env.BASE_URL],
@@ -18,7 +20,7 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.use("https://portfolio-mim4.onrender.com/", (req, res) => res.send("hello"));
+app.get("/", (req, res) => res.send("hello"));
 
 // app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
 //   // res.send(req.body);
