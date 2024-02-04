@@ -20,12 +20,12 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.get("/", (req, res) => res.send("hello"));
+app.post("/", (req, res) => res.send("hello"));
 
-app.post("/contact", (req, res) => {
-  // res.send(req.body);
-  updateEntrySheets(req.body);
-});
+// app.post("/contact", (req, res) => {
+//   // res.send(req.body);
+//   updateEntrySheets(req.body);
+// });
 
 async function updateEntrySheets(formData) {
   // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
@@ -41,7 +41,7 @@ async function updateEntrySheets(formData) {
     process.env.SPREADSHEET_ID,
     serviceAccountAuth
   );
-  
+
   await doc.loadInfo(); // loads document properties and worksheets
   // console.log(doc.title);
   // await doc.updateProperties({ title: "renamed doc" });
