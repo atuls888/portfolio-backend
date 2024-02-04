@@ -6,7 +6,7 @@ import "dotenv/config";
 // import cors from "cors";
 
 const app = express();
-const port = process.env.PORT ;//|| "3000"
+const port = process.env.PORT; //|| "3000"
 
 // app.use(express.static("dist"));
 app.use(bodyParser.json());
@@ -18,8 +18,7 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.get(process.env.BASE_URL,(req,res)=> res.send('hello')
-)
+app.get(process.env.BASE_URL, (req, res) => res.send("hello"));
 
 app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
   // res.send(req.body);
