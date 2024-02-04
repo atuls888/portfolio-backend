@@ -31,7 +31,7 @@ async function updateEntrySheets(formData) {
     serviceAccountAuth
   );
 
-  // await doc.loadInfo(); 
+   await doc.loadInfo(); 
 
   // const sheet = doc.sheetsByIndex[0]; 
 
