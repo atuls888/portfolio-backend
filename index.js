@@ -18,8 +18,8 @@ app.use(bodyParser.json());
 //   })
 // );
 
-// app.get("/api/v1",(req,res)=> res.send('hello')
-// )
+app.get("https://portfolio-mim4.onrender.com",(req,res)=> res.send('hello')
+)
 
 app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
   // res.send(req.body);
