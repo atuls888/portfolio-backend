@@ -22,10 +22,10 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send("hello"));
 
-// app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
-//   // res.send(req.body);
-//   updateEntrySheets(req.body);
-// });
+app.post("/contact", (req, res) => {
+  // res.send(req.body);
+  updateEntrySheets(req.body);
+});
 
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
 const serviceAccountAuth = new JWT({
