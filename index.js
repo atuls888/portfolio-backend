@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.get("https://portfolio-mim4.onrender.com",(req,res)=> res.send('hello')
+app.get(`http://localhost:${port}`,(req,res)=> res.send('hello')
 )
 
 app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
