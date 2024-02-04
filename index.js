@@ -26,10 +26,10 @@ async function updateEntrySheets(formData) {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
-  // const doc = new GoogleSpreadsheet(
-  //   process.env.SPREADSHEET_ID,
-  //   serviceAccountAuth
-  // );
+  const doc = new GoogleSpreadsheet(
+    process.env.SPREADSHEET_ID,
+    serviceAccountAuth
+  );
 
   // await doc.loadInfo(); 
 
