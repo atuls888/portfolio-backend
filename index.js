@@ -3,27 +3,27 @@ import { JWT } from "google-auth-library";
 import express from "express";
 import bodyParser from "body-parser";
 import "dotenv/config";
-// import cors from "cors";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT; //|| "3000"
 
 // app.use(express.static("dist"));
 app.use(bodyParser.json());
-// app.use(
-//   cors({
-//     origin: ["http://localhost:5173/"],
-//     methods: ["POST"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: [process.env.BASE_URL],
+    methods: ["POST","GET"],
+    credentials: true,
+  })
+);
 
 app.get(process.env.BASE_URL, (req, res) => res.send("hello"));
 
-app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
-  // res.send(req.body);
-  updateEntrySheets(req.body);
-});
+// app.post("https://portfolio-mim4.onrender.com/contact", (req, res) => {
+//   // res.send(req.body);
+//   updateEntrySheets(req.body);
+// });
 
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
 const serviceAccountAuth = new JWT({
