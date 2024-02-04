@@ -20,7 +20,10 @@ app.use(bodyParser.json());
 //   })
 // );
 
-app.post("/", (req, res) => res.send("hello"));
+app.post("/", (req, res) => {
+  console.log(req.body)
+  res.send("hello")
+});
 
 // app.post("/contact", (req, res) => {
 //   // res.send(req.body);
